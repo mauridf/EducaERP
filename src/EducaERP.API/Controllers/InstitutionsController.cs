@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EducaERP.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/instituicao")]
     [ApiExplorerSettings(GroupName = "Instituição")]
     public class InstitutionsController : ControllerBase
     {

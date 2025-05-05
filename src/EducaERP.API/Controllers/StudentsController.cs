@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace EducaERP.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    [ApiExplorerSettings(GroupName = "Alunos")]
+    [Route("api/aluno")]
+    [ApiExplorerSettings(GroupName = "Instituição")]
     public class StudentsController : ControllerBase
     {
         private readonly IStudentService _service;

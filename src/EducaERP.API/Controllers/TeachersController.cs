@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace EducaERP.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    [ApiExplorerSettings(GroupName = "Professores")]
+    [Route("api/professor")]
+    [ApiExplorerSettings(GroupName = "Instituição")]
     public class TeachersController : ControllerBase
     {
         private readonly ITeacherService _service;

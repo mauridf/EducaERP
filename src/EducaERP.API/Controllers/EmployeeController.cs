@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EducaERP.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/funcionario")]
     [ApiExplorerSettings(GroupName = "Instituição")]
     public class EmployeesController : ControllerBase
     {
