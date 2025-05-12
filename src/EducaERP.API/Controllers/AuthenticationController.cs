@@ -36,8 +36,15 @@ namespace EducaERP.API.Controllers
         {
             try
             {
-                var token = await _authService.Login(loginDto);
-                return Ok(new { token });
+                var (token, user) = await _authService.Login(loginDto);
+
+                return Ok(new
+                {
+                    Token = token,
+                    Username = user.Usuario,
+                    UserType = user.TipoUsuario.ToString(), // Convertendo enum para string
+                    CreatedAt = user.DataCriacao
+                });
             }
             catch (Exception ex)
             {

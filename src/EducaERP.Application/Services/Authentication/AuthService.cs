@@ -18,7 +18,7 @@ namespace EducaERP.Application.Services.Authentication
             _tokenService = tokenService;
         }
 
-        public async Task<string> Login(LoginDTO loginDto)
+        public async Task<(string Token, User User)> Login(LoginDTO loginDto)
         {
             var user = await _userRepository.GetByUsername(loginDto.Username)
                 ?? throw new NotFoundException("Usuário não encontrado");
@@ -26,7 +26,9 @@ namespace EducaERP.Application.Services.Authentication
             if (!BCrypt.Net.BCrypt.Verify(loginDto.Password, user.SenhaHash))
                 throw new AuthenticationException("Senha incorreta");
 
-            return _tokenService.GenerateToken(user);
+            var token = _tokenService.GenerateToken(user);
+
+            return (token, user);
         }
 
         public async Task<UserResponseDTO> Register(RegisterDTO registerDto)
